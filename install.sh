@@ -6,7 +6,7 @@
 # Supported: Linux (x86_64, aarch64) and macOS (x86_64, aarch64).
 set -eu
 
-REPO="cybercore-tech/ghostport"
+REPO="cybercoretech/ghostport"
 INSTALL_DIR="${GHOSTPORT_INSTALL_DIR:-$HOME/.local/bin}"
 
 die() {
