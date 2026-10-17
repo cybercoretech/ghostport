@@ -34,4 +34,4 @@ cybercore = "0.4"
 # Used by tests/namespace_tests.rs to run forward/reverse link tests
 # across two real Linux network namespaces instead of one process on
 # loopback.
-gateflow = { git = "https://github.com/cybercore-tech/gateflow", rev = "6c07ae9f945921418c31bbc3a3ae70e695d972db" }
+gateflow = { git = "https://github.com/cybercoretech/gateflow", rev = "6c07ae9f945921418c31bbc3a3ae70e695d972db" }

@@ -1,6 +1,6 @@
 [Unit]
 Description=GhostPort — encrypted, NAT-traversing port forwarder
-Documentation=https://github.com/cybercore-tech/ghostport
+Documentation=https://github.com/cybercoretech/ghostport
 After=network-online.target
 Wants=network-online.target
 
