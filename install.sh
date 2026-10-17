@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install GhostPort from the latest GitHub release.
 #
-#   curl -fsSL https://cybercore-tech.github.io/ghostport/install.sh | sh
+#   curl -fsSL https://cybercoretech.github.io/ghostport/install.sh | sh
 #
 # Supported: Linux (x86_64, aarch64) and macOS (x86_64, aarch64).
 set -eu
