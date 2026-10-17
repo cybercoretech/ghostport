@@ -1,6 +1,6 @@
 [Unit]
 Description=ghostport-firewall — watches ghostport's journal and blackholes offending IPs via nftables
-Documentation=https://github.com/cybercore-tech/ghostport
+Documentation=https://github.com/cybercoretech/ghostport
 After=network-online.target ghostport.service
 Wants=network-online.target
 BindsTo=ghostport.service

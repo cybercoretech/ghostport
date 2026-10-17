@@ -649,6 +649,7 @@ dependencies = [
 [[package]]
 name = "gateflow"
 version = "0.1.0"
+source = "git+https://github.com/cybercoretech/gateflow?rev=6c07ae9f945921418c31bbc3a3ae70e695d972db#6c07ae9f945921418c31bbc3a3ae70e695d972db"
 dependencies = [
  "nix 0.31.3",
  "nlink",

@@ -2,8 +2,8 @@
   <img src="assets/ghostport-brand/ghostport-hero.svg" alt="GhostPort — encrypted tunnels that travel lightly" width="820">
 </p>
 
-[![CI](https://github.com/cybercore-tech/ghostport/actions/workflows/ci.yml/badge.svg)](https://github.com/cybercore-tech/ghostport/actions/workflows/ci.yml)
-[![Release](https://github.com/cybercore-tech/ghostport/actions/workflows/release.yml/badge.svg)](https://github.com/cybercore-tech/ghostport/actions/workflows/release.yml)
+[![CI](https://github.com/cybercoretech/ghostport/actions/workflows/ci.yml/badge.svg)](https://github.com/cybercoretech/ghostport/actions/workflows/ci.yml)
+[![Release](https://github.com/cybercoretech/ghostport/actions/workflows/release.yml/badge.svg)](https://github.com/cybercoretech/ghostport/actions/workflows/release.yml)
 
 `Rust` · `Noise Protocol` · `tokio`
 
@@ -14,12 +14,12 @@ daemons and a pinned keypair.
 ## 📦 Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/cybercore-tech/ghostport/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/cybercoretech/ghostport/main/install.sh | sh
 ```
 
 Downloads the latest release for your platform (Linux or macOS,
 x86_64 or aarch64), verifies its SHA-256 checksum, and installs
-`ghostport` to `~/.local/bin`. See the [site](https://cybercore-tech.github.io/ghostport/)
+`ghostport` to `~/.local/bin`. See the [site](https://cybercoretech.github.io/ghostport/)
 for a live install widget, or build from source with `cargo build --release`.
 
 ## 🎯 What it solves
