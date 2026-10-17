@@ -129,6 +129,7 @@ mod tests {
 
     fn sample_snapshot() -> StatusSnapshot {
         StatusSnapshot {
+            schema_version: 1,
             role: "server".to_string(),
             uptime_secs: 12345,
             control_connected: true,

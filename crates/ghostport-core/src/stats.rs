@@ -122,6 +122,7 @@ impl SharedState {
     pub fn snapshot(&self, config: &Config) -> StatusSnapshot {
         let control_connected = self.control.connected.load(Ordering::Relaxed);
         StatusSnapshot {
+            schema_version: 1,
             role: format!("{:?}", self.role).to_lowercase(),
             uptime_secs: now_unix().saturating_sub(self.started_at),
             control_connected,
@@ -169,6 +170,9 @@ pub struct LinkSnapshot {
 /// socket and consumed by `ghostport status`/the TUI.
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct StatusSnapshot {
+    /// Version of the JSON status snapshot schema. Increment only for
+    /// incompatible changes; additive fields remain version 1.
+    pub schema_version: u32,
     /// `"server"` or `"client"`, lowercased from [`Role`].
     pub role: String,
     /// Seconds since this daemon instance started.
@@ -221,6 +225,7 @@ mod tests {
         let state = SharedState::new(&cfg);
         let snap = state.snapshot(&cfg);
 
+        assert_eq!(snap.schema_version, 1);
         assert_eq!(snap.role, "server");
         assert!(!snap.control_connected);
         assert_eq!(snap.links.len(), 1);
