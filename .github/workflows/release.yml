@@ -46,6 +46,18 @@ jobs:
         with:
           ref: ${{ env.RELEASE_TAG }}
 
+      # Tags made before the org move pin git dependencies (gateflow) at the
+      # retired github.com/cybercore-tech account. The same commits live under
+      # cybercoretech, so only the address changes; done in the tree (not git
+      # config) so cross's container sees it too.
+      - name: Point git dependencies at the cybercoretech org
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -rl --include=Cargo.toml --include=Cargo.lock 'github.com/cybercore-tech/' . \
+            | xargs -r sed -i.orig 's#github.com/cybercore-tech/#github.com/cybercoretech/#g'
+          find . -name '*.orig' -delete
+
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
