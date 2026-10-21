@@ -1,6 +1,12 @@
 name: Release
 
 on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag to build and release (e.g. v0.1.0)
+        required: true
+        type: string
   push:
     tags:
       - "v*"
@@ -9,6 +15,8 @@ permissions:
   contents: write
 
 env:
+  # The pushed tag, or the tag asked for when run by hand.
+  RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
   CARGO_TERM_COLOR: always
 
 jobs:
@@ -35,6 +43,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ env.RELEASE_TAG }}
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -88,6 +98,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ env.RELEASE_TAG }}
           files: dist/*
           generate_release_notes: true
           fail_on_unmatched_files: true
